@@ -1,0 +1,11 @@
+# FOR: MNVolkov_BipOS_0.5.4_Mili_chaohu_1.1.2.05.fw or stock
+
+# block installing alipay message handler
+08054B28 F12B0308 00000000
+
+# nop _alipay_svc_gattc_write_cmd_confirm handler check
+08032678 28B1 00BF
+
+# replace tick count with received message count in debug logs
+08032684 E6E7 00BF
+0803268A 0246 6288

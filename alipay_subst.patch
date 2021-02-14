@@ -1,0 +1,16 @@
+# for: latin 1.1.5.36
+# substitution of the ble message handler of the alipay service
+
+# do not allow to install the alipay message handler
+8054408 691F0308 00000000
+
+# remove the check for binding in the _alipay_svc_gattc_write_cmd_confirm handler
+# which will give us the ability to upload our data to the alipay message queue
+
+08031A00 28B1 00BF 
+
+# output to debug the length of the data uploaded to the alipay message queue
+# -> [%d] [WARN] recv alipay msg while not binding
+
+#08031A0C E6E7 00BF
+#08031A12 0246 6288
